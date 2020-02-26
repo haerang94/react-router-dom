@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
@@ -36,14 +36,15 @@ function App() {
     <div>
       <h1>Hello React Router DOM</h1>
       <ul>
+        {/* a태그를 쓰면 페이지가 매번 리로딩 되지만 Link를 쓰면 새로 리로딩하는 일 없이 페이지를 변경 가능하다  */}
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="/topics">Topics</a>
+          <Link to="/topics">Topics</Link>
         </li>
         <li>
-          <a href="/contact">Contacts</a>
+          <Link to="/contact">Contacts</Link>
         </li>
       </ul>
 
@@ -58,6 +59,7 @@ function App() {
         <Route path="/contact">
           <Contact></Contact>
         </Route>
+        <Route path="/">Not Found</Route>
       </Switch>
     </div>
   );
